@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Root DrawerLayout: the first child is the main content, the second child (layout_gravity="start")
+     is the side panel that slides in from the left. Padding for the system bars is set in MainActivity. -->
+<androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/dlMain"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <!-- Main content: the dice screen with the burger button on top of it -->
+    <FrameLayout
+        android:id="@+id/flContent"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#F5F3FF">
+
+        <!-- Title, dice and button, centred on the screen -->
+        <LinearLayout
+            android:id="@+id/llMain"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:clipChildren="false"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <!-- Title "Hoď kostkou" -->
+            <TextView
+                android:id="@+id/tvTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/title"
+                android:textColor="#352060"
+                android:textSize="32sp"
+                android:textStyle="bold" />
+
+            <!-- Dice area: either the dice symbol (idle) or the dancing GIF with a pulsing number (rolling).
+                 clipChildren="false" lets the growing number draw outside its own bounds. -->
+            <FrameLayout
+                android:id="@+id/flDice"
+                android:layout_width="match_parent"
+                android:layout_height="320dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="16dp"
+                android:clipChildren="false">
+
+                <!-- Large dice symbol (Unicode ⚀ to ⚅), shown when not rolling -->
+                <TextView
+                    android:id="@+id/tvDice"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="@string/dice_default"
+                    android:textColor="#352060"
+                    android:textSize="160sp" />
+
+                <!-- Dancing GIF, shown only while rolling -->
+                <ImageView
+                    android:id="@+id/ivSpin"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:contentDescription="@string/spin_image"
+                    android:scaleType="fitCenter"
+                    android:visibility="gone" />
+
+                <!-- Random number on top of the GIF, pulses from small to big on every change -->
+                <TextView
+                    android:id="@+id/tvSpinNumber"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:shadowColor="#000000"
+                    android:shadowRadius="12"
+                    android:textColor="#FFFFFF"
+                    android:textSize="64sp"
+                    android:textStyle="bold"
+                    android:visibility="gone" />
+            </FrameLayout>
+
+            <!-- Button that starts the roll -->
+            <Button
+                android:id="@+id/btnRoll"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/roll"
+                android:textSize="24sp" />
+
+            <!-- Result of the bet (win / lose), empty before the first roll -->
+            <TextView
+                android:id="@+id/tvOutcome"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:textColor="#352060"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <!-- Burger button in the top-left corner, opens the side panel -->
+        <ImageButton
+            android:id="@+id/ibMenu"
+            android:layout_width="56dp"
+            android:layout_height="56dp"
+            android:layout_gravity="top|start"
+            android:layout_margin="4dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:contentDescription="@string/open_menu"
+            android:src="@drawable/ic_menu"
+            app:tint="#352060" />
+    </FrameLayout>
+
+    <!-- Side panel (drawer): open with the burger button or by swiping from the left edge -->
+    <LinearLayout
+        android:id="@+id/llDrawer"
+        android:layout_width="280dp"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        android:background="#FFFFFF"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <TextView
+            android:id="@+id/tvDrawerTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:text="@string/menu"
+            android:textColor="#352060"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+
+        <!-- Opens the results page -->
+        <Button
+            android:id="@+id/btnResults"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/results" />
+    </LinearLayout>
+
+</androidx.drawerlayout.widget.DrawerLayout>

@@ -1,0 +1,28 @@
+<resources>
+    <string name="app_name">Hoď kostkou XML</string>
+    <!-- Texts shown on the main screen -->
+    <string name="title">Hoď kostkou</string>
+    <string name="roll">Hodit</string>
+    <string name="dice_default">⚀</string>
+    <!-- Side panel (drawer) -->
+    <string name="menu">Menu</string>
+    <string name="open_menu">Otevřít menu</string>
+    <string name="results">Výsledky</string>
+    <!-- Results page -->
+    <string name="results_title">Výsledky hodů</string>
+    <string name="results_empty">Zatím žádné hody.</string>
+    <string name="back">Zpět</string>
+    <!-- Betting -->
+    <string name="bet_title">Na které číslo sázíš?</string>
+    <string name="cancel">Zrušit</string>
+    <string name="spin_image">Tančící kočka během hodu</string>
+    <string name="outcome_win">Vyhrál jsi! Sázka %1$d, padlo %2$d.</string>
+    <string name="outcome_lose">Prohrál jsi. Sázka %1$d, padlo %2$d.</string>
+    <string name="drafted_text">PREPARE FOR THE TRIP TO BAKHMUT, MISTER KOT. YOU LOST…</string>
+    <string name="pepe">máš smulu…</string>
+    <string name="omni">BOOOOO!!!</string>
+    <string name="drafted_image">Kočka v helmě</string>
+    <string name="ok">OK</string>
+    <!-- One row on the results page: id, dice, result, bet, win/lose mark, time -->
+    <string name="result_row">#%1$d   %2$s %3$d   sázka %4$d %5$s   %6$s</string>
+</resources>

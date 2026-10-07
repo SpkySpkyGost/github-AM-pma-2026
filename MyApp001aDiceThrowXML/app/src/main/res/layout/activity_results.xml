@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Results page: title, list of saved rolls from the database and a back button.
+     Padding for the system bars is set in ResultsActivity. -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/llResults"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F5F3FF"
+    android:orientation="vertical"
+    tools:context=".ResultsActivity">
+
+    <TextView
+        android:id="@+id/tvResultsTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:text="@string/results_title"
+        android:textColor="#352060"
+        android:textSize="28sp"
+        android:textStyle="bold" />
+
+    <!-- Shown only when the database has no rows yet -->
+    <TextView
+        android:id="@+id/tvEmpty"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:text="@string/results_empty"
+        android:textSize="18sp"
+        android:visibility="gone" />
+
+    <!-- One row per saved roll -->
+    <ListView
+        android:id="@+id/lvResults"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp" />
+
+    <Button
+        android:id="@+id/btnBack"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_margin="16dp"
+        android:text="@string/back" />
+
+</LinearLayout>
