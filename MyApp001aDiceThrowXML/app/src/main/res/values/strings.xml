@@ -22,6 +22,7 @@
     <string name="pepe">máš smulu…</string>
     <string name="omni">BOOOOO!!!</string>
     <string name="drafted_image">Kočka v helmě</string>
+    <string name="husbantu">Uhhh, husbant. U gamble too much. Now we are homeless</string>
     <string name="ok">OK</string>
     <!-- One row on the results page: id, dice, result, bet, win/lose mark, time -->
     <string name="result_row">#%1$d   %2$s %3$d   sázka %4$d %5$s   %6$s</string>

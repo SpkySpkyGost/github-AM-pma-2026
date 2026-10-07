@@ -34,8 +34,8 @@ class MainActivity : AppCompatActivity() {
     //songs + gifs/text + img are paired. Put the corresponding files on the same list ids/positions
     private val spinGifs = listOf(R.raw.dancing_cat, R.raw.dance, R.raw.rave, R.raw.rave2, R.raw.ad67ish)
     private val songs = listOf(R.raw.kostka_song, R.raw.song2, R.raw.mlg_song, R.raw.pivo_song, R.raw.memory_song)
-    private val lossImages = listOf(R.drawable.mr_kot, R.drawable.pepe, R.drawable.thiccomniman)
-    private val lossTexts = listOf(R.string.drafted_text, R.string.pepe, R.string.omni)
+    private val lossImages = listOf(R.drawable.mr_kot, R.drawable.pepe, R.drawable.thiccomniman, R.drawable.husbantu)
+    private val lossTexts = listOf(R.string.drafted_text, R.string.pepe, R.string.omni, R.string.husbantu)
     // Number of random changes before the final result and the time of one change (one pulse)
     private val shuffleCount = 25
     private val shuffleDelayMs = 250L
