@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <LinearLayout
+        android:id="@+id/tvLayout"
+        android:layout_width="400dp"
+        android:layout_height="713dp"
+        android:orientation="vertical"
+        tools:layout_editor_absoluteX="5dp"
+        tools:layout_editor_absoluteY="10dp">
+
+        <TextView
+            android:id="@+id/tvOrderTitle"
+            android:layout_width="388dp"
+            android:layout_height="35dp"
+            android:text="TextView" />
+
+        <TextView
+            android:id="@+id/tvHeaderTitle"
+            android:layout_width="374dp"
+            android:layout_height="44dp"
+            android:text="TextView" />
+
+        <RadioGroup
+            android:id="@+id/rgBikes"
+            android:layout_width="379dp"
+            android:layout_height="151dp">
+
+            <RadioButton
+                android:id="@+id/rb1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="RadioButton1" />
+
+            <RadioButton
+                android:id="@+id/rb2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="RadioButton2" />
+
+            <RadioButton
+                android:id="@+id/rb3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="RadioButton3" />
+        </RadioGroup>
+
+        <CheckBox
+            android:id="@+id/cbFork"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="lepsi vidlice" />
+
+        <CheckBox
+            android:id="@+id/cbSedlo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="lepsdi sedlo" />
+
+        <CheckBox
+            android:id="@+id/cbHandleBar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="handle" />
+
+        <Button
+            android:id="@+id/btnOrder"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="objednat" />
+
+        <TextView
+            android:id="@+id/tvOrder"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:text="@string/textview" />
+
+        <ImageView
+            android:id="@+id/ivBike"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:src = "@drawable/bike2">
+
+        </ImageView>
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
