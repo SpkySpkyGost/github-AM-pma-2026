@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">MyApp004Objednavka</string>
     <string name="textview">Shrnuti objednavky</string>
+    <string name="shrnutiText">order text from stringsy</string>
 </resources>

@@ -1,3 +1,5 @@
+import com.android.build.api.dsl.ViewBinding
+
 plugins {
     alias(libs.plugins.android.application)
 }
@@ -6,6 +8,10 @@ android {
     namespace = "com.example.myapp004objednavka"
     compileSdk {
         version = release(37)
+    }
+
+    buildFeatures {
+        viewBinding = true
     }
 
     defaultConfig {
