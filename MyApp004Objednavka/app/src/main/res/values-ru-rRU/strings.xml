@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+
+    <string name="shrnutiText">сделайте заказ, текст  шаблонный</string>
+    <string name="rbbike1">велик 1</string>
+    <string name="rbbike2">велик 2</string>
+    <string name="rbbike3">велик 3</string>
+    <string name="lepsi_vidlice">улучшенная вилка</string>
+    <string name="lepsdi_sedlo">улучшенное сиденье</string>
+    <string name="handle">улучшенный руль</string>
+    <string name="btn_order_text">Заказать</string>
+
+
+</resources>

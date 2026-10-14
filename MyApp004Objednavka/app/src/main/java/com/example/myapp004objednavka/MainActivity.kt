@@ -28,20 +28,6 @@ class MainActivity : AppCompatActivity() {
             insets
         }
 
-        binding.btnOrder.setOnClickListener {  //when easily can crash an app, this approach is sus
-            val bike = when(binding.rgBikes.checkedRadioButtonId){
-                binding.rb1.id -> binding.rb1
-                binding.rb2.id -> binding.rb2
-                binding.rb3.id -> binding.rb3
-                else -> binding.rb1 //no choice made
-            }
-        }
-
-        val fork = binding.cbFork.isChecked
-        val sedlo = binding.cbSedlo.isChecked
-        val handle = binding.cbHandleBar.isChecked
-        val orderText = "text lorum bim bip bikes cool bike"  + (if(fork) "lepsi vidlice" else "") + (if(sedlo) "lepsi sedlo" else "") + (if(handle) "lepsi handle" else "")
-        binding.tvOrder.text = orderText
 
         //zmena obrazku
         binding.rb1.setOnClickListener {
@@ -52,6 +38,38 @@ class MainActivity : AppCompatActivity() {
         }
         binding.rb3.setOnClickListener {
             binding.ivBike.setImageResource(R.drawable.bike3)
+        }
+
+
+
+        binding.btnOrder.setOnClickListener {  //when easily can crash an app, this approach is sus
+
+            val selectedBike = when (binding.rgBikes.checkedRadioButtonId) {
+                binding.rb1.id -> binding.rb1.text.toString()
+                binding.rb2.id -> binding.rb2.text.toString()
+                binding.rb3.id -> binding.rb3.text.toString()
+                else -> binding.rb1.text.toString() //no choice made
+            }
+
+            val selectedOptions = mutableListOf<String>()
+
+            if (binding.cbFork.isChecked) {
+                selectedOptions.add(getString(R.string.lepsi_vidlice))
+            }
+            if (binding.cbSedlo.isChecked) {
+                selectedOptions.add(getString(R.string.lepsdi_sedlo))
+            }
+            if (binding.cbHandleBar.isChecked) {
+                selectedOptions.add(getString(R.string.handle))
+            }
+
+            val extrasText = if (selectedOptions.isNotEmpty()) {
+                selectedOptions.joinToString(", ")
+            } else {
+                getString(R.string.no_opts)
+            }
+
+            binding.tvOrder.text = "${getString(R.string.shrnutiText)} ${selectedBike}\n$extrasText"
         }
     }
 }

@@ -13,79 +13,80 @@
         android:layout_height="713dp"
         android:orientation="vertical"
         tools:layout_editor_absoluteX="5dp"
-        tools:layout_editor_absoluteY="10dp">
+        tools:layout_editor_absoluteY="9dp">
 
         <TextView
             android:id="@+id/tvOrderTitle"
             android:layout_width="388dp"
             android:layout_height="35dp"
-            android:text="TextView" />
+            android:text="@string/app_name" />
 
         <TextView
             android:id="@+id/tvHeaderTitle"
             android:layout_width="374dp"
             android:layout_height="44dp"
-            android:text="TextView" />
+            android:text="@string/TextViewName" />
 
         <RadioGroup
             android:id="@+id/rgBikes"
-            android:layout_width="379dp"
-            android:layout_height="151dp">
+            android:layout_width="501dp"
+            android:layout_height="151dp"
+            android:orientation="vertical">
 
             <RadioButton
                 android:id="@+id/rb1"
-                android:layout_width="match_parent"
+                android:layout_width="403dp"
                 android:layout_height="wrap_content"
-                android:text="RadioButton1" />
+                android:text="@string/rbbike1" />
 
             <RadioButton
                 android:id="@+id/rb2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="RadioButton2" />
+                android:text="@string/rbbike2" />
 
             <RadioButton
                 android:id="@+id/rb3"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="RadioButton3" />
+                android:text="@string/rbbike3" />
         </RadioGroup>
 
         <CheckBox
             android:id="@+id/cbFork"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="lepsi vidlice" />
+            android:text="@string/lepsi_vidlice" />
 
         <CheckBox
             android:id="@+id/cbSedlo"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="lepsdi sedlo" />
+            android:text="@string/lepsdi_sedlo" />
 
         <CheckBox
             android:id="@+id/cbHandleBar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="handle" />
+            android:text="@string/handle" />
 
         <Button
             android:id="@+id/btnOrder"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="objednat" />
+            android:text="@string/btn_order_text" />
 
         <TextView
             android:id="@+id/tvOrder"
             android:layout_width="match_parent"
             android:layout_height="100dp"
-            android:text="@string/textview" />
+            android:text="@string/shrnutiText" />
 
         <ImageView
             android:id="@+id/ivBike"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:src = "@drawable/bike2">
+            android:src="@drawable/bike2">
 
         </ImageView>
     </LinearLayout>

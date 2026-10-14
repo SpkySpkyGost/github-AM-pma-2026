@@ -1,5 +1,13 @@
 <resources>
-    <string name="app_name">MyApp004Objednavka</string>
-    <string name="textview">Shrnuti objednavky</string>
-    <string name="shrnutiText">order text from stringsy</string>
+    <string name="app_name" translatable="false">MyApp004Objednavka</string>
+    <string name="shrnutiText">Shrnuti objednavky:</string>
+    <string name="rbbike1">kolo 1</string>
+    <string name="rbbike2">kolo 2</string>
+    <string name="rbbike3">kolo 3</string>
+    <string name="lepsi_vidlice">Lepší vidlice</string>
+    <string name="lepsdi_sedlo">Lepší sedlo</string>
+    <string name="handle">Lepší řídítka</string>
+    <string name="btn_order_text">Objednat</string>
+    <string name="TextViewName" translatable="false">Maverick bikes</string>
+    <string name="no_opts" translatable="false">" ..."</string>
 </resources>
