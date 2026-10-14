@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".OrderFragment">
+
+    <LinearLayout
+        android:id="@+id/tvLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="5dp">
+
+        <TextView
+            android:id="@+id/tvOrderTitle"
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:text="@string/app_name" />
+
+        <TextView
+            android:id="@+id/tvHeaderTitle"
+            android:layout_width="match_parent"
+            android:layout_height="44dp"
+            android:text="@string/TextViewName" />
+
+        <RadioGroup
+            android:id="@+id/rgBikes"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <RadioButton
+                android:id="@+id/rb1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/rbbike1" />
+
+            <RadioButton
+                android:id="@+id/rb2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/rbbike2" />
+
+            <RadioButton
+                android:id="@+id/rb3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/rbbike3" />
+        </RadioGroup>
+
+        <CheckBox
+            android:id="@+id/cbFork"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/lepsi_vidlice" />
+
+        <CheckBox
+            android:id="@+id/cbSedlo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/lepsdi_sedlo" />
+
+        <CheckBox
+            android:id="@+id/cbHandleBar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/handle" />
+
+        <Button
+            android:id="@+id/btnOrder"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/btn_order_text" />
+
+        <TextView
+            android:id="@+id/tvOrder"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:text="@string/shrnutiText" />
+
+        <ImageView
+            android:id="@+id/ivBike"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:adjustViewBounds="true"
+            android:contentDescription="@string/TextViewName"
+            android:src="@drawable/bike2" />
+    </LinearLayout>
+
+</ScrollView>

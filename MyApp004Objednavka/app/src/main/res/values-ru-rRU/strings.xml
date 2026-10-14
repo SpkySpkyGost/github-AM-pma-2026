@@ -2,7 +2,7 @@
 <resources>
 
 
-    <string name="shrnutiText">сделайте заказ, текст  шаблонный</string>
+    <string name="shrnutiText">Итог заказа:</string>
     <string name="rbbike1">велик 1</string>
     <string name="rbbike2">велик 2</string>
     <string name="rbbike3">велик 3</string>
@@ -11,5 +11,21 @@
     <string name="handle">улучшенный руль</string>
     <string name="btn_order_text">Заказать</string>
 
-
+    <string name="menu_main">Заказ</string>
+    <string name="menu_records">Записи</string>
+    <string name="drawer_open">Открыть меню</string>
+    <string name="drawer_close">Закрыть меню</string>
+    <string name="choose_bike">Сначала выберите велосипед</string>
+    <string name="order_saved">Заказ сохранён</string>
+    <string name="no_records">Записей пока нет</string>
+    <string name="record_options">Опции</string>
+    <string name="action_edit">Изменить</string>
+    <string name="action_delete">Удалить</string>
+    <string name="edit_title">Изменить запись</string>
+    <string name="save">Сохранить</string>
+    <string name="cancel">Отмена</string>
+    <string name="delete_confirm_title">Удалить запись?</string>
+    <string name="delete_confirm_message">Запись №%1$d будет удалена навсегда.</string>
+    <string name="record_updated">Запись изменена</string>
+    <string name="record_deleted">Запись удалена</string>
 </resources>

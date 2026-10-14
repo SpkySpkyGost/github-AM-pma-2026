@@ -10,4 +10,23 @@
     <string name="btn_order_text">Objednat</string>
     <string name="TextViewName" translatable="false">Maverick bikes</string>
     <string name="no_opts" translatable="false">" ..."</string>
+
+    <string name="menu_main">Objednávka</string>
+    <string name="menu_records">Záznamy</string>
+    <string name="drawer_open">Otevřít menu</string>
+    <string name="drawer_close">Zavřít menu</string>
+    <string name="choose_bike">Nejdřív vyberte kolo</string>
+    <string name="order_saved">Objednávka uložena</string>
+    <string name="no_records">Zatím žádné záznamy</string>
+    <string name="record_options">Možnosti</string>
+    <string name="action_edit">Upravit</string>
+    <string name="action_delete">Smazat</string>
+    <string name="edit_title">Upravit záznam</string>
+    <string name="save">Uložit</string>
+    <string name="cancel">Zrušit</string>
+    <string name="delete_confirm_title">Smazat záznam?</string>
+    <string name="delete_confirm_message">Záznam č. %1$d bude trvale smazán.</string>
+    <string name="record_updated">Záznam upraven</string>
+    <string name="record_deleted">Záznam smazán</string>
+    <string name="record_title" translatable="false">#%1$d · %2$s</string>
 </resources>

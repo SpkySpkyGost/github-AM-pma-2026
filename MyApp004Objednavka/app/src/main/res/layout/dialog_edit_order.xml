@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:paddingStart="24dp"
+    android:paddingTop="8dp"
+    android:paddingEnd="24dp">
+
+    <RadioGroup
+        android:id="@+id/rgBikes"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <RadioButton
+            android:id="@+id/rb1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/rbbike1" />
+
+        <RadioButton
+            android:id="@+id/rb2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/rbbike2" />
+
+        <RadioButton
+            android:id="@+id/rb3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/rbbike3" />
+    </RadioGroup>
+
+    <CheckBox
+        android:id="@+id/cbFork"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/lepsi_vidlice" />
+
+    <CheckBox
+        android:id="@+id/cbSedlo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/lepsdi_sedlo" />
+
+    <CheckBox
+        android:id="@+id/cbHandleBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/handle" />
+
+</LinearLayout>

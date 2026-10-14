@@ -1,10 +1,16 @@
 package com.example.myapp004objednavka
 
 import android.os.Bundle
+import android.view.View
+import androidx.activity.OnBackPressedCallback
+import androidx.appcompat.app.ActionBarDrawerToggle
 import com.example.myapp004objednavka.databinding.ActivityMainBinding
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.view.GravityCompat
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import androidx.drawerlayout.widget.DrawerLayout
+import androidx.fragment.app.Fragment
 
 class MainActivity : AppCompatActivity() {
 
@@ -25,51 +31,55 @@ class MainActivity : AppCompatActivity() {
         ViewCompat.setOnApplyWindowInsetsListener(binding.main) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
-            insets
+            WindowInsetsCompat.CONSUMED
         }
 
+        // horni lista s burger tlacitkem, ktere otevira menu
+        setSupportActionBar(binding.toolbar)
+        val toggle = ActionBarDrawerToggle(
+            this, binding.main, binding.toolbar, R.string.drawer_open, R.string.drawer_close
+        )
+        binding.main.addDrawerListener(toggle)
+        toggle.syncState()
 
-        //zmena obrazku
-        binding.rb1.setOnClickListener {
-            binding.ivBike.setImageResource(R.drawable.bike1)
+        // prepinani mezi hlavnim pohledem a pohledem se zaznamy z databaze
+        binding.navView.setNavigationItemSelectedListener { item ->
+            if (item.itemId != binding.navView.checkedItem?.itemId) {
+                when (item.itemId) {
+                    R.id.nav_main -> showFragment(OrderFragment())
+                    R.id.nav_records -> showFragment(RecordsFragment())
+                }
+            }
+            binding.main.closeDrawer(GravityCompat.START)
+            true
         }
-        binding.rb2.setOnClickListener {
-            binding.ivBike.setImageResource(R.drawable.bike2)
+
+        // tlacitko zpet nejdriv zavre otevrene menu
+        val closeDrawerCallback = object : OnBackPressedCallback(false) {
+            override fun handleOnBackPressed() {
+                binding.main.closeDrawer(GravityCompat.START)
+            }
         }
-        binding.rb3.setOnClickListener {
-            binding.ivBike.setImageResource(R.drawable.bike3)
+        onBackPressedDispatcher.addCallback(this, closeDrawerCallback)
+        binding.main.addDrawerListener(object : DrawerLayout.SimpleDrawerListener() {
+            override fun onDrawerOpened(drawerView: View) {
+                closeDrawerCallback.isEnabled = true
+            }
+
+            override fun onDrawerClosed(drawerView: View) {
+                closeDrawerCallback.isEnabled = false
+            }
+        })
+
+        // pri otoceni displeje si fragment obnovi system sam
+        if (savedInstanceState == null) {
+            showFragment(OrderFragment())
         }
+    }
 
-
-
-        binding.btnOrder.setOnClickListener {  //when easily can crash an app, this approach is sus
-
-            val selectedBike = when (binding.rgBikes.checkedRadioButtonId) {
-                binding.rb1.id -> binding.rb1.text.toString()
-                binding.rb2.id -> binding.rb2.text.toString()
-                binding.rb3.id -> binding.rb3.text.toString()
-                else -> binding.rb1.text.toString() //no choice made
-            }
-
-            val selectedOptions = mutableListOf<String>()
-
-            if (binding.cbFork.isChecked) {
-                selectedOptions.add(getString(R.string.lepsi_vidlice))
-            }
-            if (binding.cbSedlo.isChecked) {
-                selectedOptions.add(getString(R.string.lepsdi_sedlo))
-            }
-            if (binding.cbHandleBar.isChecked) {
-                selectedOptions.add(getString(R.string.handle))
-            }
-
-            val extrasText = if (selectedOptions.isNotEmpty()) {
-                selectedOptions.joinToString(", ")
-            } else {
-                getString(R.string.no_opts)
-            }
-
-            binding.tvOrder.text = "${getString(R.string.shrnutiText)} ${selectedBike}\n$extrasText"
-        }
+    private fun showFragment(fragment: Fragment) {
+        supportFragmentManager.beginTransaction()
+            .replace(R.id.fragmentContainer, fragment)
+            .commit()
     }
 }
