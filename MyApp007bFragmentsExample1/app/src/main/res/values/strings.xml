@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">Stone Paper Scissors</string>
+
+    <string name="choose_your_attack">Choose your attack</string>
+    <string name="app_is_choosing">The app is choosing…</string>
+    <string name="draw_pick_again">Draw! Choose again.</string>
+    <string name="app_hand_sign_description">The app\'s choice</string>
+
+    <string name="stone">Stone</string>
+    <string name="scissors">Scissors</string>
+    <string name="paper">Paper</string>
+
+    <string name="you_won">You won!</string>
+    <string name="you_lost">You lost!</string>
+    <string name="play_again">Play again</string>
+</resources>
