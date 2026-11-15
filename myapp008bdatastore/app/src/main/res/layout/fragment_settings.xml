@@ -20,7 +20,15 @@
         <Button android:id="@+id/btnSave" android:layout_height="wrap_content" android:layout_width="match_parent" android:text="Uložit (DataStore)"/>
 
         <!-- Načítací kolečko je defaultně neviditelné -->
-        <ProgressBar android:id="@+id/progressBar" android:visibility="invisible" android:layout_gravity="center" android:layout_height="wrap_content" android:layout_marginTop="32dp" android:layout_width="wrap_content"/>
+        <ProgressBar
+            android:id="@+id/progressBar"
+            style="?android:attr/progressBarStyleLarge"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="32dp"
+            android:indeterminate="true"
+            android:visibility="invisible" />
 
     </LinearLayout>
 

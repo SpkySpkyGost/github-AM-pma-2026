@@ -1,3 +1,16 @@
 <resources>
     <string name="app_name">MyApp008aSharedPref</string>
+    <string name="nav_dashboard">Přehled</string>
+    <string name="nav_settings">Nastavení</string>
+    <string name="dashboard_title">Hráčský profil</string>
+    <string name="dashboard_name">Jméno: %1$s</string>
+    <string name="dashboard_switch">Přepínač: %1$s</string>
+    <string name="state_on">zapnuto</string>
+    <string name="state_off">vypnuto</string>
+    <string name="not_set">nenastaveno</string>
+    <string name="settings_title">Nastavení</string>
+    <string name="hint_name">Jméno hráče</string>
+    <string name="label_switch">Zobrazit profil veřejně</string>
+    <string name="btn_save">Uložit</string>
+    <string name="toast_saved">Profil byl uložen</string>
 </resources>

@@ -17,6 +17,8 @@ import com.google.android.material.snackbar.Snackbar
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.launch
+import android.annotation.SuppressLint
+import android.view.MotionEvent
 
 // 1. Vytvoření instance DataStore na úrovni souboru (tzv. top-level)
 val Context.dataStore by preferencesDataStore(name = "gamer_profile")
@@ -61,9 +63,16 @@ class SettingsFragment : Fragment() {
 
                 // B) Simulace těžké I/O operace na pomalém disku
                 // Tímto odložíme práci na 3 vteřiny, ale HLAVNÍ VLÁKNO ZŮSTÁVÁ VOLNÉ!
+                binding.progressBar.visibility = View.VISIBLE   // start
                 delay(3000)
+                binding.progressBar.visibility = View.INVISIBLE // stop
 
-                // C) Samotný asynchronní zápis do DataStore
+                // C) Samotný asynchronní zápis do DataStore + ukladani starsich dat
+                val old = requireContext().dataStore.data.first()
+                val oldName = old[NICKNAME_KEY] ?: ""
+                val oldHardcore = old[HARDCORE_KEY] ?: false
+
+
                 requireContext().dataStore.edit { prefs ->
                     prefs[NICKNAME_KEY] = currentName
                     prefs[HARDCORE_KEY] = currentHardcore
@@ -76,8 +85,15 @@ class SettingsFragment : Fragment() {
                 // E) Zobrazení Snackbaru s interaktivním tlačítkem
                 Snackbar.make(binding.root, "Uloženo moderní cestou", Snackbar.LENGTH_LONG)
                     .setAction("Zpět") {
-                        // Ukázka interakce - zde by se v reálu přepsala data, my si pro ukázku zobrazíme Toast
-                        Toast.makeText(requireContext(), "Akce vrácena zpět!", Toast.LENGTH_SHORT).show()
+                        viewLifecycleOwner.lifecycleScope.launch {
+                            requireContext().dataStore.edit { prefs ->
+                                prefs[NICKNAME_KEY] = oldName
+                                prefs[HARDCORE_KEY] = oldHardcore
+                            }
+                            binding.etNickname.setText(oldName)
+                            binding.switchHardcoreMode.isChecked = oldHardcore
+                            Toast.makeText(requireContext(), "Akce vrácena zpět!", Toast.LENGTH_SHORT).show()
+                        }
                     }
                     .show()
             }
@@ -88,4 +104,6 @@ class SettingsFragment : Fragment() {
         super.onDestroyView()
         _binding = null
     }
+
 }
+
